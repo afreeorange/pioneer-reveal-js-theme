@@ -1,0 +1,130 @@
+/**
+ * Pioneer theme for Reveal.js.
+ *
+ * by Nikhil Anand <nikhil.anand@pioneer.com>
+ * Copyright (c) DuPont Pioneer
+ */
+
+
+// Fetch all mixins and settings.
+// Fetch the template before the overrides.
+@import '../template/mixins';
+@import '../template/settings';
+
+
+// Specify all typefaces
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,800,800i);
+
+// Set up Pioneer colors
+$pioneerGreen: #427730;
+$pioneerPMS315: #00677f;
+$alfalfa: #64a70b;
+$canola: #f9de45;
+$coal: #222;
+$grainCorn: #ffa300;
+$inoculants: #97d700;
+$sorghum: #4a7729;
+$sunflower: #ff671f;
+$wheat: #c8102e;
+
+// Drop shadow on all text elements on the first slide
+.slides > section:first-child {
+    h1, h2, h3 {
+        text-shadow: 3px 3px 3px darken($alfalfa, 20);
+        color: lighten($inoculants, 40);
+    }
+    text-shadow: 2px 2px 2px $coal;
+}
+
+// Document font
+$mainFont: 'Nunito Sans', sans-serif;
+
+// Headings
+$headingFont: 'Nunito Sans', Impact, sans-serif;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$headingLetterSpacing: none;
+$headingColor: lighten($inoculants, 40);
+
+// Links
+$linkColor: $canola;
+$linkColorHover: $grainCorn;
+
+// Text selection color
+$selectionBackgroundColor: $wheat;
+
+// Import the template to apply overrides
+@import '../template/theme';
+
+/* --- Other overrides (non-SCSS vars) --- */
+
+// Set a background image to the Pioneer logo
+body {
+    background: $pioneerGreen url(data:image/png;base64,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) left 10px bottom 10px no-repeat;
+    background-opacity: 0.5;
+}
+
+// Tables
+.reveal table th {
+    color: $inoculants;
+    font-size: 0.85em;
+    border-bottom: 5px double;
+}
+
+// Headings, again...
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5 {
+    font-weight: 800;
+}
+
+// Sub lists. Don't use more than two levels, yo.
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+    opacity: 0.8;
+    font-size: 0.85em;
+}
+.reveal ul ul {
+    list-style-type: circle;
+}
+.reveal ul ul ul {
+    list-style-type: square;
+}
+
+// Progress bar
+.reveal .progress span {
+    background: $sunflower;
+}
+
+// Colors in overview mode
+.reveal.overview .slides section {
+    outline: 10px dotted $alfalfa;
+}
+.reveal.overview .slides section.present {
+    outline: 10px solid $inoculants;
+}
+.reveal.overview .slides section:hover {
+    outline: 10px solid $inoculants;
+}
+
+// Monospaced characters
+.reveal code,
+.reveal pre {
+    font-family: 'Inconsolata', 'Courier New', monospace;
+    background-color: darken($alfalfa, 15);
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+// Blockquotes
+.reveal blockquote {
+    background-color: $pioneerPMS315;
+    width: 90%;
+    padding: 0 0.5em;
+    text-align: left;
+}
