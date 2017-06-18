@@ -13,4 +13,7 @@ TODO
 
 * Use Pioneer typefaces
 
-(C) DuPont Pioneer
+License
+=======
+
+(c) DuPont Pioneer
